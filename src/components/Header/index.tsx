@@ -1,7 +1,14 @@
-export function Header() {
+import { ReactElement } from 'react';
+
+import { Content, Container } from '../common'
+
+interface HeaderProps {
+  children: ReactElement;
+}
+export function Header({ children }: HeaderProps) {
   return (
-    <div>
-      <h1>Logo</h1>
-    </div>
+    <Container height='100px'>
+      <Content containerPadding='8px' >{children}</Content>
+    </Container>
   );
 }
