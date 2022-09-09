@@ -1,3 +1,4 @@
+import { devices } from './devices';
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
@@ -7,13 +8,13 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 
-@media (min-width: 1024px) {
+@media ${devices.laptopL} {
   html {
     font-size: 93.75%;
   }
 }
 
-@media (min-width:768px) {
+@media ${devices.tablet} {
   html {
     font-size: 87.5%;
   }
@@ -60,8 +61,9 @@ button {
 
 export const theme = {
   colors: {
-    primary: '#353535',
     link: '#0f6643',
     linkHover: '#23a455',
+    primary: '#353535',
+    white: '#fff',
   },
 };
