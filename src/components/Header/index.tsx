@@ -1,14 +1,14 @@
 import { ReactElement } from 'react';
 
-import { Content, Container } from '../common'
+import { Container, Section } from '../common'
 
 interface HeaderProps {
   children: ReactElement;
 }
 export function Header({ children }: HeaderProps) {
   return (
-    <Container height='100px'>
-      <Content containerPadding='8px' >{children}</Content>
-    </Container>
+    <Section height='100px'>
+      <Container containerPadding='8px' >{children}</Container>
+    </Section>
   );
 }

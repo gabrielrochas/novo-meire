@@ -1,17 +1,27 @@
-import styled, { css } from 'styled-components';
+import { devices } from './../../../styles/devices';
+import styled from 'styled-components';
 
-interface StyledContainerProps {
-  bgImage?: string;
-  height?: string;
+interface ContainerProps {
+  containerPadding?: string;
+  justifyContent?: string;
 }
 
-export const StyledContainer = styled.div<StyledContainerProps>`
-  height: ${({ height }) => (!height ? '110px' : height)};
-  width: 100%;
-  position: relative;
+export const Container = styled.div<ContainerProps>`
+  height: 100%;
+  max-width: 940px;
 
-  background-image: ${({bgImage}) => bgImage && `url(${bgImage})`};
-  background-position: center left;
-  background-repeat: no-repeat;
-  background-size: cover;
+  margin: 0 auto;
+  padding: ${({ containerPadding }) =>
+    !containerPadding ? '0' : containerPadding};
+
+  display: flex;
+  ${({ justifyContent }) =>
+    justifyContent && `justify-content: ${justifyContent}`};
+
+  overflow: hidden;
+
+  @media ${devices.tablet} {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;

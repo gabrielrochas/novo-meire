@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-import { Content, Container } from '../common';
+import { Section } from '../common';
 
 interface HeroProps {
   bgImage: string;
@@ -9,8 +9,8 @@ interface HeroProps {
 
 export function Hero({ bgImage, children }: HeroProps) {
   return (
-    <Container bgImage={bgImage} height='500px'>
-      <Content justifyContent="center">{children}</Content>
-    </Container>
+    <Section bgImage={bgImage} height='500px'>
+      {children}
+    </Section>
   );
 }

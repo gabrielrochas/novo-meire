@@ -1,20 +1,22 @@
 import { ReactElement } from 'react';
 
-import { StyledContainer } from './styles';
+import { Container as StyledContainer } from './styles';
 
 interface ContainerProps {
-  bgImage?: string;
-  height?: string;
+  containerPadding?: string;
+  justifyContent?: string;
   children: ReactElement;
 }
-
 export function Container({
-  bgImage,
-  height = '110px',
+  containerPadding,
+  justifyContent,
   children,
 }: ContainerProps) {
   return (
-    <StyledContainer height={height} bgImage={bgImage}>
+    <StyledContainer
+      containerPadding={containerPadding}
+      justifyContent={justifyContent}
+    >
       {children}
     </StyledContainer>
   );
